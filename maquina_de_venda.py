@@ -58,8 +58,12 @@ class MaquinaDeVendas:
             print(f'Produto: {produto.nome}, Preço: R${produto.preco}')
             print(end=' ')
 
-    def mostrar_caixa(self):
-        print(f'Caixa: R${self.__caixa}')
+    def get_caixa(self) -> int:
+        return self.__caixa
+
+    def set_caixa(self, valor) -> int:
+        self.__caixa = valor
+        return self.__caixa
 
     def mostrar_estoque_produto(self):
         print(f'Etoque: {self.estoque}')
@@ -70,5 +74,4 @@ maquina = MaquinaDeVendas()
 maquina.cadastrar_produtos('Café', 8, 10)
 maquina.comprar_produto('Café', 10)
 maquina.pagar_produto(200)
-maquina.mostrar_caixa()
 maquina.mostrar_estoque_produto()
